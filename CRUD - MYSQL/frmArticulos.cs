@@ -16,5 +16,29 @@ namespace CRUD___MYSQL
         {
             InitializeComponent();
         }
+
+        private void btnNuevo_MouseHover(object sender, EventArgs e)
+        {
+            btnNuevo.BackColor = Color.DarkSeaGreen;
+            btnNuevo.ForeColor = Color.Black;
+        }
+
+        private void btnNuevo_MouseLeave(object sender, EventArgs e)
+        {
+            btnNuevo.BackColor = Color.SteelBlue;
+            btnNuevo.ForeColor = Color.White;
+        }
+
+        private void btnActualizar_MouseHover(object sender, EventArgs e)
+        {
+            btnActualizar.BackColor = Color.DarkSeaGreen;
+            btnActualizar.ForeColor = Color.Black;
+        }
+
+        private void btnActualizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnActualizar.BackColor = Color.SteelBlue;
+            btnActualizar.ForeColor = Color.White;
+        }
     }
 }
