@@ -48,6 +48,9 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +60,10 @@
             this.dgvArticulos.AllowUserToDeleteRows = false;
             this.dgvArticulos.AllowUserToOrderColumns = true;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 189);
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 215);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
-            this.dgvArticulos.Size = new System.Drawing.Size(815, 249);
+            this.dgvArticulos.Size = new System.Drawing.Size(815, 223);
             this.dgvArticulos.TabIndex = 0;
             // 
             // lblArticulo
@@ -75,15 +78,19 @@
             // 
             // txtDescripcionArticulo
             // 
+            this.txtDescripcionArticulo.Enabled = false;
             this.txtDescripcionArticulo.Location = new System.Drawing.Point(149, 26);
             this.txtDescripcionArticulo.Name = "txtDescripcionArticulo";
+            this.txtDescripcionArticulo.ReadOnly = true;
             this.txtDescripcionArticulo.Size = new System.Drawing.Size(259, 20);
             this.txtDescripcionArticulo.TabIndex = 2;
             // 
             // txtMarca
             // 
+            this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(568, 27);
             this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(259, 20);
             this.txtMarca.TabIndex = 4;
             // 
@@ -99,8 +106,10 @@
             // 
             // txtMedida
             // 
+            this.txtMedida.Enabled = false;
             this.txtMedida.Location = new System.Drawing.Point(149, 69);
             this.txtMedida.Name = "txtMedida";
+            this.txtMedida.ReadOnly = true;
             this.txtMedida.Size = new System.Drawing.Size(207, 20);
             this.txtMedida.TabIndex = 6;
             // 
@@ -116,6 +125,7 @@
             // 
             // btnLupaUM
             // 
+            this.btnLupaUM.Enabled = false;
             this.btnLupaUM.Location = new System.Drawing.Point(363, 66);
             this.btnLupaUM.Name = "btnLupaUM";
             this.btnLupaUM.Size = new System.Drawing.Size(45, 23);
@@ -125,6 +135,7 @@
             // 
             // btnLupaCategoria
             // 
+            this.btnLupaCategoria.Enabled = false;
             this.btnLupaCategoria.Location = new System.Drawing.Point(782, 65);
             this.btnLupaCategoria.Name = "btnLupaCategoria";
             this.btnLupaCategoria.Size = new System.Drawing.Size(45, 23);
@@ -134,8 +145,10 @@
             // 
             // txtCategoria
             // 
+            this.txtCategoria.Enabled = false;
             this.txtCategoria.Location = new System.Drawing.Point(568, 68);
             this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(207, 20);
             this.txtCategoria.TabIndex = 9;
             // 
@@ -153,7 +166,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Broadway", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(239, 117);
+            this.label4.Location = new System.Drawing.Point(238, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 21);
             this.label4.TabIndex = 11;
@@ -161,30 +174,35 @@
             // 
             // txtStockActual
             // 
-            this.txtStockActual.Location = new System.Drawing.Point(413, 117);
+            this.txtStockActual.Enabled = false;
+            this.txtStockActual.Location = new System.Drawing.Point(412, 103);
             this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.ReadOnly = true;
             this.txtStockActual.Size = new System.Drawing.Size(123, 20);
             this.txtStockActual.TabIndex = 12;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Broadway", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(169, 151);
+            this.btnCancelar.Location = new System.Drawing.Point(165, 129);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(152, 32);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Broadway", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(458, 151);
+            this.btnGuardar.Location = new System.Drawing.Point(454, 129);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(163, 32);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Visible = false;
             // 
             // btnNuevo
             // 
@@ -197,6 +215,7 @@
             this.btnNuevo.TabIndex = 15;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             this.btnNuevo.MouseLeave += new System.EventHandler(this.btnNuevo_MouseLeave);
             this.btnNuevo.MouseHover += new System.EventHandler(this.btnNuevo_MouseHover);
             // 
@@ -225,6 +244,8 @@
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.MouseLeave += new System.EventHandler(this.btnEliminar_MouseLeave);
+            this.btnEliminar.MouseHover += new System.EventHandler(this.btnEliminar_MouseHover);
             // 
             // btnReporte
             // 
@@ -237,6 +258,8 @@
             this.btnReporte.TabIndex = 18;
             this.btnReporte.Text = "Reporte";
             this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.MouseLeave += new System.EventHandler(this.btnReporte_MouseLeave);
+            this.btnReporte.MouseHover += new System.EventHandler(this.btnReporte_MouseHover);
             // 
             // btnSalir
             // 
@@ -249,12 +272,44 @@
             this.btnSalir.TabIndex = 19;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            this.btnSalir.MouseHover += new System.EventHandler(this.btnSalir_MouseHover);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(363, 186);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(45, 23);
+            this.btnBuscar.TabIndex = 22;
+            this.btnBuscar.Text = "...";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(149, 189);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(207, 20);
+            this.txtBuscar.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Broadway", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 189);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 21);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Buscar:";
             // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 450);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnEliminar);
@@ -277,6 +332,7 @@
             this.Controls.Add(this.dgvArticulos);
             this.Name = "frmArticulos";
             this.Text = "Control de Articulos";
+            this.Load += new System.EventHandler(this.frmArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -305,6 +361,9 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label5;
     }
 }
 

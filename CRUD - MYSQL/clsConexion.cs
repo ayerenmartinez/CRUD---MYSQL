@@ -23,7 +23,7 @@ namespace CRUD___MYSQL
             this.Servidor = "localhost";
             this.Puerto = "3306";
             this.Usuario = "root";
-            this.Clave = "";
+            this.Clave = "root";
         }
         public MySqlConnection CrearConexion()
         {
